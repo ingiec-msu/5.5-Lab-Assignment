@@ -40,12 +40,17 @@
 /* Formats the merch item to be side-by-side */
 .merchContainer {
   display: flex;
-  gap: 20px;           /* space between items */
-  flex-wrap: wrap;     /* allows wrapping on smaller screens */
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .merchContainer > div {
-  border: 1px solid #ccc;
-  padding: 15px;
-  border-radius: 8px;
+  width: 250px;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
 }
