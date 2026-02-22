@@ -3,7 +3,7 @@ import PickleRick from './assets/PickleRick.webp'
 import RickTape from './assets/RickTape.png'
 import Plush from './assets/Plush.avif'
 import Talking from './assets/Talking.webp'
-import Dill from './assets/Dill.jpg'
+import Dill from './assets/Dill.webp'
 import './App.css'
 
 /* Data structure */
