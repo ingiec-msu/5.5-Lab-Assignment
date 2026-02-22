@@ -1,39 +1,39 @@
 import { useState } from 'react'
 import PickleRick from './assets/PickleRick.webp'
 import RickTape from './assets/RickTape.png'
+import Plush from './assets/Plush.avif'
+import Talking from './assets/Talking.webp'
+import Dill from './assets/Dill.jpg'
 import './App.css'
 
 /* Data structure */
 const items = [
-  { id: 1, name: 'Rick and Morty 20" Pickle Rick Plush Pillow', price: '$47.99', isInStock: true, img: 'src/assets/images/Plush Pillow.avif'},
-  { id: 2, name: 'Rick and Morty: Talking Pickle Rick', price: '$13.79', isInStock: true, img: 'src/assets/images/Talking Pillow.webp'},
-  { id: 3, name: 'Rick And Morty Pickle Rick™ Dill Flavored Pickle', price: '$2.00', isInStock: false, img: 'src/assets/images/Dill Pickle.jpg'},
+  { id: 1, name: 'Rick and Morty 20" Pickle Rick Plush Pillow', price: '$47.99', isInStock: true, img: Plush},
+  { id: 2, name: 'Rick and Morty: Talking Pickle Rick', price: '$13.79', isInStock: true, img: Talking},
+  { id: 3, name: 'Rick And Morty Pickle Rick™ Dill Flavored Pickle', price: '$2.00', isInStock: false, img: Dill},
 ];
 
 /* Compoenent 1; Display Items*/
 function Merch() {
   const listMerch = items.map(item =>
-    <div>
+    <div key={item.id}>
       {/* Components can't return multiple JSX tags unless they are wrapped in a parent element */}
       {/* This is a JSX comment */}
-      <h2>{items.name}</h2>
-      <p>{items.price}</p>
+      <h2>{item.name}</h2>
+      <p>{item.price}</p>
       {/* This a conditional that checks if an image exists before displaying it */}
-      {items.image &&
+      {item.img &&
       <img
         className="bookCover"
-        src={book.image}
+        src={item.img}
         //alt={book.title + ' cover'}
-        style={{
-          width: items.width,
-          height: items.height
-        }}
+        style={{ width: '150px' }}
       />
       }
     </div>
   );
   return (
-    <ul>{listMerch}</ul>
+    <div>{listMerch}</div>
   )
 }
 
