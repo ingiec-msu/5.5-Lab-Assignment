@@ -3,6 +3,12 @@ import PickleRick from './assets/PickleRick.webp'
 import RickTape from './assets/RickTape.png'
 import './App.css'
 
+const items = [
+  { id: 1, name: 'Rick and Morty 20" Pickle Rick Plush Pillow', price: '$47.99', isInStock: true },
+  { id: 2, name: 'Rick and Morty: Talking Pickle Rick', price: '$13.79', isInStock: true },
+  { id: 3, name: 'Rick And Morty Pickle Rick™ Dill Flavored Pickle', price: '$2.00', isInStock: false },
+];
+
 function App() {
   const [count, setCount] = useState(0)
 
