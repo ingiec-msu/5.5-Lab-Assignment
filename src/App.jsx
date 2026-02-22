@@ -32,7 +32,7 @@ function Merch() {
         className="bookCover"
         src={item.img}
         alt={item.name}
-        style={{ width: '150px' }}
+        style={{ width: '120px' }}
       />
       }
     </div>
