@@ -98,7 +98,7 @@ function App() {
       </div>
       <h1>Pickle Rick!</h1>
 
-      <h2>Merch List</h2>
+      <h2 className="merchTitle">Merch List</h2>
       <FilterBar 
         showInStockOnly={showInStockOnly}
         setShowInStockOnly={setShowInStockOnly}

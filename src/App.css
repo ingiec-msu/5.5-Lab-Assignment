@@ -54,3 +54,7 @@
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   text-align: center;
 }
+
+.merchTitle {
+  color: rgb(236, 205, 29);
+}
