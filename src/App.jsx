@@ -47,16 +47,31 @@ function FilterBar({ showInStockOnly, setShowInStockOnly }) {
   );
 }
 
+function SortBar({ sortOrder, setSortOrder }) {
+  return (
+    <button onClick={() => setSortOrder(sortOrder === 'lowToHigh' ? 'none' : 'lowToHigh')}>
+      {sortOrder === 'lowToHigh' ? 'Unsort' : 'Sort by Price (Low to High)'}
+    </button>
+  );
+}
+
 
 function App() {
   const [count, setCount] = useState(0)
   //Adding filter state
   const [showInStockOnly, setShowInStockOnly] = useState(false)
+  const [sortOrder, setSortOrder] = useState('none')
 
   //Filtering items that are in stock
   const filteredItems = showInStockOnly
     ? items.filter(item => item.isInStock)
     : items
+
+  const sortedItems = sortOrder === 'none' ? filteredItems : [...filteredItems].sort((a, b) => {
+    const priceA = parseFloat(a.price.replace('$', ''));
+    const priceB = parseFloat(b.price.replace('$', ''));
+    return priceA - priceB;
+  });
 
   return (
     <>
@@ -75,8 +90,9 @@ function App() {
         showInStockOnly={showInStockOnly}
         setShowInStockOnly={setShowInStockOnly}
       />
+      <SortBar sortOrder={sortOrder} setSortOrder={setSortOrder} />
 
-      <Merch items={filteredItems} />
+      <Merch items={sortedItems} />
       
 
       <div className="card">
