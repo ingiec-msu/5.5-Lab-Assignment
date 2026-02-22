@@ -4,13 +4,23 @@ import RickTape from './assets/RickTape.png'
 import Plush from './assets/Plush.avif'
 import Talking from './assets/Talking.webp'
 import Dill from './assets/Dill.webp'
+import Gummy from './assets/Gummy.avif'
+import Spray from './assets/Spray.jpg'
+import Cup from './assets/cup.avif'
+import Dancer from './assets/dancer.webp'
+import Rat from './assets/rat.jpg'
 import './App.css'
 
 /* Data structure */
 const items = [
-  { id: 1, name: 'Rick and Morty 20" Pickle Rick Plush Pillow', price: '$47.99', isInStock: true, img: Plush},
-  { id: 2, name: 'Rick and Morty: Talking Pickle Rick', price: '$13.79', isInStock: true, img: Talking},
-  { id: 3, name: 'Rick And Morty Pickle Rick™ Dill Flavored Pickle', price: '$2.00', isInStock: false, img: Dill},
+  { id: 1, name: 'Rick and Morty 20" Pickle Rick Plush Pillow', price: '$47.99', isInStock: true, link: 'https://www.walmart.com/ip/Rick-and-Morty-20-Pickle-Rick-Plush-Pillow/271336925?wmlspartner=wlpa&selectedSellerId=1143&selectedOfferId=039A66A332C0489484C9B12356C0B840&conditionGroupCode=1', img: Plush},
+  { id: 2, name: 'Rick and Morty: Talking Pickle Rick', price: '$13.79', isInStock: true, link: 'https://www.worldofbooks.com/products/rick-and-morty-talking-pickle-rick-book-robb-pearlman-9780762494347?sku=NIN9780762494347', img: Talking},
+  { id: 3, name: 'Rick And Morty Pickle Rick™ Dill Flavored Pickle', price: '$2.00', isInStock: false, link: 'https://www.fivebelow.com/products/rick-and-morty-pickle-rick-dill-flavored-pickle-9161917', img: Dill},
+  { id: 4, name: 'Pickle Rick Gummy', price: '$5.99', isInStock: false, link: 'https://www.walmart.com/ip/Boston-America-Rick-and-Morty-PICKLE-RICK-GUMMY-CANDY-Dill-Pickle-Flavored/989829842', img: Gummy},
+  { id: 5, name: 'Rick and Morty X SHEGLAM Pickle Rick Setting Spray', price: '$9.69', isInStock: true, link: 'https://us.sheglam.com/en/product/Rick-and-Morty-X-SHEGLAM-Pickle-Rick-Setting-Spray-11345031534396480?currency=USD&ggf=google&url_from=adhub450447520&pf=Google&cid=22432441828&setid=176179371965&adid=745334788514&network=g&target=&kwd=pla-294682000766&geoid=9017204&gad_source=4&gad_campaignid=22432441828&gbraid=0AAAAACKdJgNBjqfpfm9rTYIxArgB-oZe6&gclid=EAIaIQobChMI0pjNoJfukgMVOizUAR2sZDZ9EAQYAyABEgL_VfD_BwE', img: Spray},
+  { id: 6, name: 'Pickle Rick Stein Glass', price: '$16.99', isInStock: false, link: 'https://us.zavvi.com/p/gift-home-office/pickle-rick-stein-glass/12086217', img: Cup},
+  { id: 7, name: 'Rick and Morty Pickle Rick Dashboard Dancer', price: '$14.90', isInStock: false, link: 'https://www.boxlunch.com/product/rick-and-morty-pickle-rick-dashboard-dancer---boxlunch-exclusive/12032827.html?srsltid=AfmBOopvadLqtQ5bfnLkhSLE02JLo84qVzSYNxX6TD7eP3YNimSloTxS', img: Dancer},
+  { id: 8, name: 'Funko Rick and Morty Pickle Rick Action Figure', price: '$20.00', isInStock: false, link: 'https://stores.comichub.com/geek_geek_nerd_nerd/Product/OutOfStock/funko-rick-morty-pickle-rick-action-figure', img: Rat}
 ];
 
 /* Compoenent 1; Display Items*/
