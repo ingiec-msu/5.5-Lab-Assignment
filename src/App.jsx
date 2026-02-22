@@ -16,9 +16,14 @@ const items = [
 /* Compoenent 1; Display Items*/
 function Merch() {
   const listMerch = items.map(item =>
-    <div key={item.id}>
+    <div key={item.id}
+      style={{
+        color: item.isInStock ? 'green' : 'red'
+      }}
+    >
       {/* Components can't return multiple JSX tags unless they are wrapped in a parent element */}
       {/* This is a JSX comment */}
+      
       <h2>{item.name}</h2>
       <p>{item.price}</p>
       {/* This a conditional that checks if an image exists before displaying it */}
