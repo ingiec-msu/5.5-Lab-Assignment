@@ -14,37 +14,49 @@ const items = [
 ];
 
 /* Compoenent 1; Display Items*/
-function Merch() {
-  const listMerch = items.map(item =>
-    <div key={item.id}
-      style={{
-        color: item.isInStock ? 'green' : 'red'
-      }}
-    >
-      {/* Components can't return multiple JSX tags unless they are wrapped in a parent element */}
-      {/* This is a JSX comment */}
-      
-      <h2>{item.name}</h2>
-      <p>{item.price}</p>
-      {/* This a conditional that checks if an image exists before displaying it */}
-      {item.img &&
-      <img
-        className="bookCover"
-        src={item.img}
-        alt={item.name}
-        style={{ width: '120px' }}
-      />
-      }
-    </div>
-  );
+function Merch({ items }) {
   return (
-    <div className="merchContainer">{listMerch}</div>
+    <div className="merchContainer">
+      {items.map(item => (
+        <div
+          key={item.id}
+          style={{ color: item.isInStock ? 'green' : 'red' }}
+        >
+          <h2>{item.name}</h2>
+          <p>{item.price}</p>
+
+          {item.img && (
+            <img
+              src={item.img}
+              alt={item.name}
+              style={{ width: '120px' }}
+            />
+          )}
+        </div>
+      ))}
+    </div>
   )
+}
+
+//Filtering items that are in stock
+function FilterBar({ showInStockOnly, setShowInStockOnly }) {
+  return (
+    <button onClick={() => setShowInStockOnly(!showInStockOnly)}>
+      {showInStockOnly ? "Show All" : "Show In-Stock Only"}
+    </button>
+  );
 }
 
 
 function App() {
   const [count, setCount] = useState(0)
+  //Adding filter state
+  const [showInStockOnly, setShowInStockOnly] = useState(false)
+
+  //Filtering items that are in stock
+  const filteredItems = showInStockOnly
+    ? items.filter(item => item.isInStock)
+    : items
 
   return (
     <>
@@ -59,7 +71,13 @@ function App() {
       <h1>Pickle Rick!</h1>
 
       <h2>Merch List</h2>
-      <Merch />
+      <FilterBar 
+        showInStockOnly={showInStockOnly}
+        setShowInStockOnly={setShowInStockOnly}
+      />
+
+      <Merch items={filteredItems} />
+      
 
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
