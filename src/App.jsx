@@ -31,14 +31,14 @@ function Merch() {
       <img
         className="bookCover"
         src={item.img}
-        //alt={book.title + ' cover'}
+        alt={item.name}
         style={{ width: '150px' }}
       />
       }
     </div>
   );
   return (
-    <div>{listMerch}</div>
+    <div className="merchContainer">{listMerch}</div>
   )
 }
 
