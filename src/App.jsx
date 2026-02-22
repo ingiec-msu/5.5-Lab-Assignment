@@ -16,7 +16,7 @@ function Merch() {
     <li
       key={item.id}
       style={{
-        color: item.isAvailable ? 'red' : 'green'
+        color: item.isInStock ? 'green' : 'red'
       }}
     >
       {item.name}
@@ -42,17 +42,15 @@ function App() {
         </a>
       </div>
       <h1>Pickle Rick!</h1>
+
+      <h2>Merch List</h2>
+      <Merch />
+
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
